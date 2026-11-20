@@ -15,7 +15,11 @@
     data-sap-ui-resource-roots='{
     "com.raunak.products": "./"
 }'
-    data-sap-ui-on-init="module:com/raunak/products/index"
+    data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
   ></script>
-  <body class="sapUiBody" id="content"></body>
+  <body class="sapUiBody" id="content">
+
+    <div data-sap-ui-component data-name="com.raunak.products"
+    data-id="container" data-settings='{"id": "ui5-demo"}'></div>
+  </body>
 </html>
