@@ -4,9 +4,12 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend("com.raunak.products.controller.App", {
-      onCartButtonPress: (oEvent) => {
-        MessageToast.show("Added to Cart!");
+
+      onPressCreateNewProduct: function (oEvent) {
+        const oBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+        MessageToast.show(oBundle.getText("messageProductCreated", ["Macbook pro"]));
       },
+
     });
   },
 );
