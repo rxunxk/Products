@@ -4,5 +4,5 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
 >
-    <Button text="cart button" press="onCartButtonPress"/>
+    <Button text="{i18n>btnTitle}" press="onCartButtonPress"/>
 </mvc:View>
