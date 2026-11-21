@@ -24,13 +24,13 @@
             "type": "XML"
         },
         "dependencies":{
-            "minUi5Version": "1.147.0",
+            "minUI5Version": "1.147.0",
             "libs": {
                 "sap.m": {},
                 "sap.ui.core": {}
             }
         },
-        "contentDensity": {
+        "contentDensities": {
             "compact": true,
             "cozy": true
         },
