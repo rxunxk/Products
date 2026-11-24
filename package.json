@@ -1,0 +1,23 @@
+{
+  "name": "products",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/rxunxk/Products#readme",
+  "bugs": {
+    "url": "https://github.com/rxunxk/Products/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rxunxk/Products.git"
+  },
+  "license": "ISC",
+  "author": "raunak",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4.1.0"
+  }
+}
