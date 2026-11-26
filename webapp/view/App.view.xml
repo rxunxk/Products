@@ -3,6 +3,7 @@
     displayBlock="true"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
 >
     <Shell>
         <App class="myProductsList">
@@ -10,13 +11,52 @@
                 class="sapUiResponsiveContentPadding"
                 title="{i18n>appTitle}"
             >
-                <Input
-                    id="idProductName"
-                    class="sapUiTinyMarginEnd"
-                    placeholder="{i18n>productName}"
-                    width="20rem"
-                    maxLength="40"
-                />
+                <VBox>
+                    <Input
+                        id="idProductName"
+                        class="sapUiTinyMarginEnd"
+                        placeholder="{i18n>productName}"
+                        width="20rem"
+                        maxLength="40"
+                    />
+                    <ComboBox
+                        id="idCategory"
+                        placeholder="{i1n8>category}"
+                    >
+                        <items>
+                            <core:Item
+                                key=""
+                                text=""
+                            />
+                            <core:Item
+                                key="0"
+                                text="Food"
+                            />
+                            <core:Item
+                                key="1"
+                                text="Beverages"
+                            />
+                            <core:Item
+                                key="2"
+                                text="Electronics"
+                            />
+                        </items>
+                    </ComboBox>
+                    <Input
+                        id="idPrice"
+                        placeholder="{i18n>price}"
+                        type="Number"
+                    />
+                    <DatePicker
+                        id="idReleaseDate"
+                        placeholder="{i18n>releaseDate}"
+                    />
+                    <DatePicker
+                        id="idDiscontinuedDate"
+                        placeholder="{i18n>disocntinuedDate}"
+                    />
+                </VBox>
+
                 <Button
                     text="{i18n>buttonTextCreate}"
                     press="onPressCreateNewProduct"
@@ -30,9 +70,28 @@
                     delete="onPressDelete"
                 >
                     <items>
-                        <StandardListItem title="Product 1" />
-                        <StandardListItem title="Product 2" />
-                        <StandardListItem title="Product 3" />
+                        <ObjectListItem
+                            title="Product 1"
+                            number="999"
+                            numberUnit="INR"
+                        >
+                            <attributes>
+                                <ObjectAttribute
+                                    title="Category"
+                                    text="Electronics"
+                                />
+                                <ObjectAttribute
+                                    title="Release date"
+                                    text="01/01/2026"
+                                />
+                            </attributes>
+                            <firstStatus>
+                                <ObjectStatus
+                                    text="Available"
+                                    state="Success"
+                                />
+                            </firstStatus>
+                        </ObjectListItem>
                     </items>
                 </List>
             </Page>
