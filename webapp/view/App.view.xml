@@ -5,14 +5,14 @@
     xmlns:mvc="sap.ui.core.mvc"
 >
     <Shell>
-        <App>
-            <Page title="{i18n>appTitle}">
+        <App class="myProductsList">
+            <Page class="sapUiResponsiveContentPadding" title="{i18n>appTitle}">
                 <Input class="sapUiTinyMarginEnd" placeholder="{i18n>productName}" width="20rem" maxLength="40"></Input>
                 <Button
                     text="{i18n>buttonTextCreate}"
                     press="onPressCreateNewProduct"
                 />
-                <List headerText="{i18n>listHeader}" noDataText="{i18n>noDataText}">
+                <List headerText="{i18n>listHeader}" noDataText="{i18n>noDataText}" class="sapUiSmallMarginTop listWithSmallerTitle">
                 <items> 
                     <StandardListItem title="Product 1"></StandardListItem>
                     <StandardListItem title="Product 2"></StandardListItem>
