@@ -4,8 +4,6 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core"
-    xmlns:form="sap.ui.layout.form"
-    xmlns:layout="sap.ui.layout"
 >
     <Shell>
         <App class="myProductsList">
@@ -13,103 +11,23 @@
                 class="sapUiResponsiveContentPadding"
                 title="{i18n>appTitle}"
             >
-                <form:SimpleForm layout="ResponsiveGridLayout" editable="true" 
-                breakpointM="600"
-                breakpointL="1024"
-                breakpointXL="1440"
-                emptySpanM="0"
-                emptySpanL="1"
-                emptySpanXL="1"
-                labelSpanS="12"
-                labelSpanM="3"
-                labelSpanL="4"
-                labelSpanXL="4"
-                >
-                    <form:content>
-                    <core:Title text="{i18n>productDetails}"></core:Title>
-                        <Label text="{i18n>productName}" />
-                        <Input
-                            id="idProductName"
-                            maxLength="40"
-                        />
-                        <Label text="{i18n>category}" />
-                        <ComboBox
-                            id="idCategory"
-                            placeholder="{i1n8>category}"
-                        >
-                            <items>
-                                <core:Item
-                                    key=""
-                                    text=""
-                                />
-                                <core:Item
-                                    key="0"
-                                    text="Food"
-                                />
-                                <core:Item
-                                    key="1"
-                                    text="Beverages"
-                                />
-                                <core:Item
-                                    key="2"
-                                    text="Electronics"
-                                />
-                            </items>
-                        </ComboBox>
-                        <Label text="{i18n>price}" />
-                        <Input
-                            id="idPrice"
-                            type="Number"
-                        />
-                        <Input value="INR" editable="false">
-                            <layoutData>
-                                <layout:GridData span="XL1 L2 M3 S12"></layout:GridData>
-                            </layoutData>
-                        </Input>
-                        <core:Title text="{i18n>dates}"></core:Title>
-                        <Label text="{i18n>releaseDate}" />
-                        <DatePicker id="idReleaseDate" />
-                        <Label text="{i18n>disocntinuedDate}" />
-                        <DatePicker id="idDiscontinuedDate" />
-                    </form:content>
-                </form:SimpleForm>
-                <Button
-                    type="Emphasized"
-                    text="{i18n>buttonTextCreate}"
-                    press="onPressCreateNewProduct"
-                />
                 <List
                     id="idProductList"
-                    headerText="{i18n>listHeader}"
                     noDataText="{i18n>noDataText}"
                     class="sapUiSmallMarginTop listWithSmallerTitle"
                     mode="Delete"
                     delete="onPressDelete"
                 >
-                    <items>
-                        <ObjectListItem
-                            title="Product 1"
-                            number="999"
-                            numberUnit="INR"
-                        >
-                            <attributes>
-                                <ObjectAttribute
-                                    title="Category"
-                                    text="Electronics"
-                                />
-                                <ObjectAttribute
-                                    title="Release date"
-                                    text="01/01/2026"
-                                />
-                            </attributes>
-                            <firstStatus>
-                                <ObjectStatus
-                                    text="Available"
-                                    state="Success"
-                                />
-                            </firstStatus>
-                        </ObjectListItem>
-                    </items>
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="{i18n>listHeader}" />
+                            <ToolbarSpacer />
+                            <Button
+                                icon="sap-icon://add"
+                                press="onPressAddNewProduct"
+                            />
+                        </Toolbar>
+                    </headerToolbar>
                 </List>
             </Page>
         </App>
