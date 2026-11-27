@@ -4,16 +4,18 @@ sap.ui.define(
     "sap/m/ObjectListItem",
     "sap/m/ObjectAttribute",
     "sap/m/ObjectStatus",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "sap/ui/core/Fragment",
+    "com/raunak/products/model/models"
   ],
   function (
     Controller,
     ObjectListItem,
     ObjectAttribute,
     ObjectStatus,
-    ValueState,
+    coreLibrary,
     Fragment,
+    models
   ) {
     "use strict";
 
@@ -67,8 +69,8 @@ sap.ui.define(
 
       _getAvailabilityState: function (dDiscontinuedDate) {
         return dDiscontinuedDate > new Date()
-          ? ValueState.Success
-          : ValueState.Error;
+          ? coreLibrary.ValueState.Success
+          : coreLibrary.ValueState.Error;
       },
 
       onPressAddNewProduct: function () {
@@ -89,6 +91,10 @@ sap.ui.define(
 
       onCancelNewProduct: function () {
         this._createNewProductDialog.close();
+      },
+
+      onProductDialogClose: function () {
+        this.getOwnerComponent().setModel(models.createNewInputModel(), "input")
       }
     });
   },

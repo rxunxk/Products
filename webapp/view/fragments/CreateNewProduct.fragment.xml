@@ -7,6 +7,7 @@
     <Dialog
         title="{i18n>createNewProduct}"
         contentWidth="800px"
+        afterClose="onProductDialogClose"
     >
         <content>
             <form:SimpleForm
@@ -29,11 +30,13 @@
                     <Input
                         id="idProductName"
                         maxLength="40"
+                        value="{input>/Name}"
                     />
                     <Label text="{i18n>category}" />
                     <ComboBox
                         id="idCategory"
                         placeholder="{i1n8>category}"
+                        selectedKey="{input>/Category}"
                     >
                         <items>
                             <core:Item
@@ -58,6 +61,7 @@
                     <Input
                         id="idPrice"
                         type="Number"
+                        value="{input>/Price}"
                     />
                     <Input
                         value="INR"
@@ -69,9 +73,9 @@
                     </Input>
                     <core:Title text="{i18n>dates}" />
                     <Label text="{i18n>releaseDate}" />
-                    <DatePicker id="idReleaseDate" />
+                    <DatePicker id="idReleaseDate" dateValue="{input>/DiscontinuedDate}" />
                     <Label text="{i18n>disocntinuedDate}" />
-                    <DatePicker id="idDiscontinuedDate" />
+                    <DatePicker id="idDiscontinuedDate" dateValue="{input>/ReleaseDate}"/>
                 </form:content>
             </form:SimpleForm>
         </content>
